@@ -30,7 +30,7 @@ printf '#################################
 #####Installing dependences######
 #################################\n'
 if [[ $server_game -eq 'csgo' ]]; then
-  dpkg --add-architecture i386; sudo apt update; sudo apt install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
+  dpkg --add-architecture i386; sudo apt update; sudo apt install -y mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
 fi
 
 printf '############################
@@ -41,7 +41,9 @@ adduser --disabled-password --disabled-login --gecos "" mlp
 printf '################################
 #####Downloading installer######
 ################################\n'
-cp cfgs/*$server_game* /home/mlp/
+chmod a+x /root
+chmod -R a+rx /root/mlp/cfgs
+cp cfgs/config_csgo.sh /home/mlp/
 cd /home/mlp/
 wget -O linuxgsm.sh https://linuxgsm.sh
 chown mlp:mlp * && chmod +x *.sh
@@ -50,5 +52,5 @@ chown mlp:mlp * && chmod +x *.sh
 
 printf '
 #####Installing $server_game######\n'
-su mlp ./linuxgsm.sh $server_game
-su mlp ./$server_game ai
+su mlp ./linuxgsm.sh ${server_game}server
+su mlp ./${server_games}server ai
