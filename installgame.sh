@@ -8,7 +8,7 @@
 
 
 #NO ME TOQUES SI NO ERES DIGNO DE ELLO
-server_game=$1
+server_game=$(echo $1 | awk '{print tolower($0)}')
 
 if [[ $# -eq 0 ]] || [[ $1 -eq 'help' ]] || [[ $1 -eq 'h' ]]; then
   printf '####################################
@@ -29,7 +29,7 @@ cd
 printf '#################################
 #####Installing dependences######
 #################################\n'
-if [[ $(echo $server_game | awk '{print toupper($0)}') -eq 'CSGO' ]]; then
+if [[ $server_game -eq 'csgo' ]]; then
   dpkg --add-architecture i386; sudo apt update; sudo apt install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
 fi
 
@@ -41,9 +41,10 @@ adduser --disabled-password --disabled-login --gecos "" mlp
 printf '################################
 #####Downloading installer######
 ################################\n'
+cp cfgs/*$server_game* /home/mlp/
 cd /home/mlp/
 wget -O linuxgsm.sh https://linuxgsm.sh
-chown mlp:mlp linuxgsm.sh && chmod +x linuxgsm.sh
+chown mlp:mlp * && chmod +x *.sh
 
 
 

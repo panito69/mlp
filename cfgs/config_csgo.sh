@@ -3,24 +3,26 @@
 # Chorri-mierda csgo server configurator loader
 
 
-#CAMBIAME
-server_name=""          #Nombre
-server_type=""          #OPCIONES: 5vs5 ffa
-rcon_passwd=""          #RCON password
-player_num=""           #Max Players
-gsltoken=""             #Token gsl
-telegram_bot_token=""   #Token bot telegram
-telegran_chat_id=""     #Id chat telegram
+#CAMBIAME LOKO
+server_name="CAMBIAME"          #Nombre
+server_type="CAMBIAME"          #OPCIONES: 5vs5 ffa
+rcon_passwd="CAMBIAME"          #RCON password
+player_num="CAMBIAME"           #Max Players
+gsltoken="CAMBIAME"             #Token gsl
+telegram_bot_token="CAMBIAME"   #Token bot telegram
+telegran_chat_id="CAMBIAME"     #Id chat telegram
 
 
-#NO ME TOQUES SI NO ERES DIGNO DE ELLO
+
+
+#NO ME CAMBIES A PARTIR DE AQUI SI NO ERES DIGNO DE ELLO
 if [[ $# -eq 0 ]] || [[ $1 -eq 'help' ]] || [[ $1 -eq 'h' ]]; then
   printf '####################################
   #####MLP GAME SERVER COFIGURER######
   ####################################\n'
   echo ''
-  echo 'USAGE: EDIT THIS FILE AND SET THE VARS THEN RUN>> $0 CONFIGURE'
-elif [[ $1 -eq 'CONFIGURE' ]]; then
+  echo 'USAGE: EDIT THIS FILE AND SET THE VARS THEN RUN>> $0 apply'
+elif [[ $1 -eq 'apply' ]]; then
   if [[ $(whoami) == 'mlp' ]; then
     printf '########################
     #####Loading CFGS#######
