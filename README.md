@@ -15,7 +15,7 @@ Download this repo ( git clone https://github.com/panito69/mlp.git )
 
 Go inside mlp folder and as a root lauch:  bash installgame.sh <gamename_here>
 
-Avialable games: CSGO MINECRAFT (More to come...)
+Available games: CSGO MINECRAFT (More to come...)
 
 ### Configuring
 
