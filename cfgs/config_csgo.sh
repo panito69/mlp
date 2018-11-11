@@ -16,13 +16,13 @@ telegran_chat_id="CAMBIAME"     #Id chat telegram
 
 
 #NO ME CAMBIES A PARTIR DE AQUI SI NO ERES DIGNO DE ELLO
-if [[ $# -eq 0 ]] || [[ $1 -eq 'help' ]] || [[ $1 -eq 'h' ]]; then
+if [[ $# == 0 ]] || [[ $1 == 'help' ]] || [[ $1 == 'h' ]]; then
   printf '####################################
   #####MLP GAME SERVER COFIGURER######
   ####################################\n'
   echo ''
   echo 'USAGE: EDIT THIS FILE AND SET THE VARS THEN RUN>> $0 apply'
-elif [[ $1 -eq 'apply' ]]; then
+elif [[ $1 == 'apply' ]]; then
   if [[ $(whoami) == 'mlp' ]; then
     printf '########################
     #####Loading CFGS#######
