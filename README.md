@@ -1,5 +1,9 @@
 # MLP STUFF
 
+This is a repo with a variety of tools for the Murcia Lan Party
+
+ATM this tools are: GameServer Installer (More to come...)
+
 ## INSTALL GAME SERVER
 
 ### Getting tools
