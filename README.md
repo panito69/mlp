@@ -14,6 +14,7 @@ Go inside mlp folder and as a root lauch:  bash installgame.sh <gamename_here>
 ### Configuring
 
 Now parametrize and lauch the configuration wanted as mlp user:
+
   su mlp -
   
   nano config_csgo.sh
