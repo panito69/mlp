@@ -4,8 +4,8 @@ This is a repo with a variety of tools for the Murcia Lan Party
 
 ATM this tools are: 
 
--Game Server Installer 
--(More to come...)
+- Game Server Installer 
+- (More to come...)
 
 ## GAME SERVER INSTALLER 
 
@@ -20,9 +20,9 @@ Go inside mlp folder and as a root lauch:  ```bash installgame.sh <gamename_here
 
 Available games: 
 
--CSGO 
--MINECRAFT 
--(More to come...)
+- CSGO 
+- MINECRAFT 
+- (More to come...)
 
 ### Configuring
 
