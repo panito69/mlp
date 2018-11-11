@@ -8,13 +8,14 @@ ATM this tools are: GameServer Installer (More to come...)
 
 ### Getting tools
 
-To install the server download this repo ( git clone https://github.com/panito69/mlp.git ) and execute installgame.sh
+Download this repo ( git clone https://github.com/panito69/mlp.git )
 
 
 ### Using them
 
 Go inside mlp folder and as a root lauch:  bash installgame.sh <gamename_here>
-Avialable games: CSGO MINECRAFT
+
+Avialable games: CSGO MINECRAFT (More to come...)
 
 ### Configuring
 
