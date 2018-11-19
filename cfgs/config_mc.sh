@@ -22,12 +22,12 @@ if [[ $# == 0 ]] || [[ $1 == 'help' ]] || [[ $1 == 'h' ]]; then
   echo ''
   echo 'USAGE: EDIT THIS FILE AND SET THE VARS THEN RUN>> $0 apply'
 elif [[ $1 -eq 'apply' ]]; then
-  if [[ $(whoami) == 'mlp' ]; then
+  if [[ $(whoami) == 'mlp' ]]; then
     printf '########################
     #####Loading CFGS#######
     ########################\n'
 
-    printf '#Minecraft server properties (MLP 2018)
+    printf "#Minecraft server properties (MLP 2018)
 allow-flight=false
 allow-nether=true
 announce-player-achievements=true
@@ -65,7 +65,7 @@ spawn-monsters=true
 spawn-npcs=true
 use-native-transport=true
 view-distance=10
-white-list=false' > /home/mcserver/serverfiles/server.properties
+white-list=false" > serverfiles/server.properties
 
 
 
@@ -73,7 +73,7 @@ white-list=false' > /home/mcserver/serverfiles/server.properties
     #####Starting server#######
     ###########################\n'
     ./mcserver st
-  elif [[ $(whoami) == 'root']]; then
+  elif [[ $(whoami) == 'root' ]]; then
     echo 'DO NOT RUN THIS SCRIPT AS ROOT'
     exit 1
   else
