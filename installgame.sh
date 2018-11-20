@@ -28,7 +28,7 @@ if [[ $(whoami) != 'root' ]]; then
     echo "Run this as root"
     exit 1
 fi
- echo "Habbim mola"
+ echo "Habbim mola mucho"
 cd
 
 printf '#################################
