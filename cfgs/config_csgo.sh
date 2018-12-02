@@ -4,14 +4,21 @@
 
 
 #CAMBIAME LOKO
-server_name="CAMBIAME"          #Nombre
-server_type="CAMBIAME"          #OPCIONES: 5vs5 ffa
-rcon_passwd="CAMBIAME"          #RCON password
-player_num="CAMBIAME"           #Max Players
-gsltoken="CAMBIAME"             #Token gsl
-telegram_bot_token="CAMBIAME"   #Token bot telegram
-telegran_chat_id="CAMBIAME"     #Id chat telegram
+server_name="CAMBIAME"           #Numero del server o Death Match
+server_type="CAMBIAME"           #OPCIONES: mlp dm
+player_num="10 20"               #Max Players 10 en competitivo  20 en dm
+gsltoken="CAMBIAME"              #Token gsl
 
+  if [[ $server_type == 'mlp' ]; then
+    gt=3
+    gm=0
+  elif [[ $server_type == 'dm' ]]; then
+    gt=1
+    gm=2
+  else
+    echo 'Modo de partida desconocido, usa mlp o dm'
+    exit 1
+  fi
 
 
 
@@ -22,20 +29,22 @@ if [[ $# == 0 ]] || [[ $1 == 'help' ]] || [[ $1 == 'h' ]]; then
   ####################################\n'
   echo ''
   echo 'USAGE: EDIT THIS FILE AND SET THE VARS THEN RUN>> $0 apply'
+ 
+  
 elif [[ $1 == 'apply' ]]; then
-  if [[ $(whoami) == 'mlp' ]; then
+  if [[ $(whoami) == 'mlp' ]]; then
     printf '########################
     #####Loading CFGS#######
     ########################\n'
-    printf "\nmaxplayers=\"$player_num\"\ntickrate=\"128\"\ngslt=\"$gsltoken\"\ntelegramalert=\"on\"\ntelegramtoken=\"$telegram_bot_token\"\ntelegramchatid=\"$telegram_chat_id\"\n" >> /home/mlp/lgsm/config-lgsm/csgoserver/csgoserver.cfg
-    printf "\nhostname \"$server_name\"\nrcon_password \"$rcon_passwd\"\n" >> /home/mlp/serverfiles/csgo/cfg/csgoserver.cfg
-    cp /root/mlp/cfgs/csgo_$server_type.cfg /home/mlp/serverfiles/csgo/cfg/ALGO.cfg
+    printf "\ngametype=\"$gt\"\ngamemode=\"$gm\"\ndefaultmap=\"de_dust2\"\nmaxplayers=\"$player_num\"\ntickrate=\"128\"\ngslt=\"$gsltoken\"\n" >> /home/mlp/lgsm/config-lgsm/csgoserver/csgoserver.cfg
+    cat csgo_main.cfg >> /home/mlp/serverfiles/csgo/cfg/csgoserver.cfg
+    cat /root/mlp/cfgs/csgo_$server_type.cfg >> /home/mlp/serverfiles/csgo/cfg/gamemode_custom.cfg
 
     printf '###########################
     #####Starting server#######
     ###########################\n'
     ./csgoserver st
-  elif [[ $(whoami) == 'root']]; then
+  elif [[ $(whoami) == 'root' ]]; then
     echo 'DO NOT RUN THIS SCRIPT AS ROOT'
     exit 1
   else
