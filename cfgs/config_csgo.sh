@@ -9,7 +9,7 @@ server_type="CAMBIAME"           #OPCIONES: mlp dm
 player_num="10 20"               #Max Players 10 en competitivo  20 en dm
 gsltoken="CAMBIAME"              #Token gsl
 
-  if [[ $server_type == 'mlp' ]]; then
+  if [[ $server_type == '5vs5' ]]; then
     gt=3
     gm=0
   elif [[ $server_type == 'dm' ]]; then
