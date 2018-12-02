@@ -4,7 +4,7 @@
 
 
 #CAMBIAME LOKO
-server_name="CAMBIAME"           #Numero del server o Death Match
+server_name="CAMBIAME"           #Compititivo (Numero)  o   Death Match
 server_type="CAMBIAME"           #OPCIONES: mlp dm
 player_num="10 20"               #Max Players 10 en competitivo  20 en dm
 gsltoken="CAMBIAME"              #Token gsl
@@ -38,6 +38,7 @@ elif [[ $1 == 'apply' ]]; then
     ########################\n'
     printf "\ngametype=\"$gt\"\ngamemode=\"$gm\"\ndefaultmap=\"de_dust2\"\nmaxplayers=\"$player_num\"\ntickrate=\"128\"\ngslt=\"$gsltoken\"\n" >> /home/mlp/lgsm/config-lgsm/csgoserver/csgoserver.cfg
     cat csgo_main.cfg >> /home/mlp/serverfiles/csgo/cfg/csgoserver.cfg
+    printf "\nhostname \"CSGO MLP SERVER $server_name\"" >> /home/mlp/serverfiles/csgo/cfg/csgoserver.cfg
     cat /root/mlp/cfgs/csgo_$server_type.cfg >> /home/mlp/serverfiles/csgo/cfg/gamemode_custom.cfg
 
     printf '###########################
