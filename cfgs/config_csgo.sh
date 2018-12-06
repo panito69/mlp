@@ -24,10 +24,12 @@ elif [[ $1 == 'apply' ]]; then
     printf '########################
     #####Loading CFGS#######
     ########################\n'
-    printf "\ndefaultmap=\"de_dust2\"\nmaxplayers=\"$player_num\"\ntickrate=\"128\"\ngslt=\"$gsltoken\"\n" >> /home/mlp/lgsm/config-lgsm/csgoserver/csgoserver.cfg
+    printf "\ngametype=\"1\"\ngamemode=\"0\"\ndefaultmap=\"de_dust2\"\nmaxplayers=\"$player_num\"\ntickrate=\"128\"\ngslt=\"$gsltoken\"\n" >> /home/mlp/lgsm/config-lgsm/csgoserver/csgoserver.cfg
     cat /root/mlp/cfgs/csgo_main.cfg >> /home/mlp/serverfiles/csgo/cfg/csgoserver.cfg
     printf "\nhostname \"CSGO MLP SERVER $server_name\"" >> /home/mlp/serverfiles/csgo/cfg/csgoserver.cfg
     cp /root/mlp/cfgs/csgo_$server_type.cfg > /home/mlp/serverfiles/csgo/cfg/
+    cp /root/mlp/cfgs/server.cfg > /home/mlp/serverfiles/csgo/cfg/
+
 
     printf '###########################
     #####Starting server#######
