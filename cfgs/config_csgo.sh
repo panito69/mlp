@@ -39,7 +39,7 @@ elif [[ $1 == 'apply' ]]; then
     printf "\ngametype=\"$gt\"\ngamemode=\"$gm\"\ndefaultmap=\"de_dust2\"\nmaxplayers=\"$player_num\"\ntickrate=\"128\"\ngslt=\"$gsltoken\"\n" >> /home/mlp/lgsm/config-lgsm/csgoserver/csgoserver.cfg
     cat /root/mlp/cfgs/csgo_main.cfg >> /home/mlp/serverfiles/csgo/cfg/csgoserver.cfg
     printf "\nhostname \"CSGO MLP SERVER $server_name\"" >> /home/mlp/serverfiles/csgo/cfg/csgoserver.cfg
-    cat /root/mlp/cfgs/csgo_$server_type.cfg >> /home/mlp/serverfiles/csgo/cfg/gamemode_custom.cfg
+    cat /root/mlp/cfgs/csgo_$server_type.cfg > /home/mlp/serverfiles/csgo/cfg/gamemode_custom.cfg
 
     printf '###########################
     #####Starting server#######
