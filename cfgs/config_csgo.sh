@@ -5,21 +5,9 @@
 
 #CAMBIAME LOKO
 server_name="CAMBIAME"           #Compititivo (Numero)  o   Death Match
-server_type="CAMBIAME"           #OPCIONES: 5vs5 dm
-player_num="11 20"               #Max Players 11 en competitivo  20 en dm
+server_type="5vs5"           #OPCIONES: 5vs5 dm
+player_num="11"               #Max Players 11 en competitivo  20 en dm
 gsltoken="CAMBIAME"              #Token gsl
-
-  if [[ $server_type == '5vs5' ]]; then
-    gt=3
-    gm=0
-  elif [[ $server_type == 'dm' ]]; then
-    gt=1
-    gm=2
-  else
-    echo 'Modo de partida desconocido, usa mlp o dm'
-    exit 1
-  fi
-
 
 
 #NO ME CAMBIES A PARTIR DE AQUI SI NO ERES DIGNO DE ELLO
@@ -36,10 +24,10 @@ elif [[ $1 == 'apply' ]]; then
     printf '########################
     #####Loading CFGS#######
     ########################\n'
-    printf "\ngametype=\"$gt\"\ngamemode=\"$gm\"\ndefaultmap=\"de_dust2\"\nmaxplayers=\"$player_num\"\ntickrate=\"128\"\ngslt=\"$gsltoken\"\n" >> /home/mlp/lgsm/config-lgsm/csgoserver/csgoserver.cfg
+    printf "\ndefaultmap=\"de_dust2\"\nmaxplayers=\"$player_num\"\ntickrate=\"128\"\ngslt=\"$gsltoken\"\n" >> /home/mlp/lgsm/config-lgsm/csgoserver/csgoserver.cfg
     cat /root/mlp/cfgs/csgo_main.cfg >> /home/mlp/serverfiles/csgo/cfg/csgoserver.cfg
     printf "\nhostname \"CSGO MLP SERVER $server_name\"" >> /home/mlp/serverfiles/csgo/cfg/csgoserver.cfg
-    cat /root/mlp/cfgs/csgo_$server_type.cfg > /home/mlp/serverfiles/csgo/cfg/gamemode_custom.cfg
+    cp /root/mlp/cfgs/csgo_$server_type.cfg > /home/mlp/serverfiles/csgo/cfg/
 
     printf '###########################
     #####Starting server#######
